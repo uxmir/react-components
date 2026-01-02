@@ -1,13 +1,12 @@
 "use cient";
 import React from "react";
 import Container from "./components/Container/Container";
-import ColorPage, {ColorSetting}  from '../app/components/HexColorApply/ColorPage'
+import Card from '../app/components/ScrollCardReveal/Card'
 const page = () => {
   return (
     <>
       <Container>
-        <ColorPage/>
-        <ColorSetting/>
+        <Card/>
       </Container>
     </>
   );
