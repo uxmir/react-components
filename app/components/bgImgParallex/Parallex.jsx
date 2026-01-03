@@ -24,7 +24,7 @@ const Parallex = () => {
           y: -100,
         },
         {
-          y: 200,
+          y: 100,
           ease: "none",
           scrollTrigger: {
             trigger: ".text-container",
@@ -38,23 +38,36 @@ const Parallex = () => {
       );
 
       gsap.fromTo(
-        ".footer-text",
+        ".footer-black-bg",
+        { height: "180px" }, 
         {
-          y: -200,
-        },
-        {
-          y: 300,
-          ease: "none",
+          height: "900px",
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".footer",
-            scroller: "body",
             start: "top bottom",
-            end: "bottom top",
-            markers: true,
+            end: "bottom center",
             scrub: 1,
-          },
+          }
         }
       );
+
+      gsap.fromTo(
+        ".footer-text",
+        { y: -150 }, 
+        {
+          y: 300, 
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".footer",
+            start: "top bottom",
+            end: "bottom center",
+            scrub: 1,
+            markers: true,
+          }
+        }
+      );
+    
     });
     return () => ctx.revert();
   }, []);
@@ -68,17 +81,22 @@ const Parallex = () => {
         />
       </div>
       <BottomParallex />
-      <div className="h-[100vh] relative overflow-hidden text-container">
+      <div className="h-[100vh]  relative overflow-hidden text-container">
         <div className="mt-20 text w-full py-20 bg-black text-white text-center text-9xl font-extrabold uppercase">
           MirMOniruzzaman
         </div>
       </div>
-      <div className="footer mb-30 relative overflow-hidden">
-        <div className="w-full h-60 bg-green-500 "></div>
-        <div className="  w-full h-[180px] bg-black text-white text-center text-9xl font-extrabold uppercase">
-          <span className="footer-text"> MirMOniruzzaman</span>
-        </div>
+   <div className="footer h-[700px] relative overflow-hidden ">
+      {/* উপরের গ্রিন সেকশন */}
+      <div className="w-full h-60 bg-green-500"></div>
+
+      {/* ব্ল্যাক সেকশন যার হাইট বাড়বে */}
+      <div className="footer-black-bg w-full bg-black text-white flex  justify-center overflow-hidden">
+        <span className="footer-text  text-6xl md:text-9xl font-extrabold uppercase">
+          Mir Moniruzzaman
+        </span>
       </div>
+    </div>
     </>
   );
 };
