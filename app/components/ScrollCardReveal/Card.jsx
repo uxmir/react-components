@@ -57,8 +57,8 @@ const Card = () => {
             key={index}
             className="relative group mt-20 overflow-hidden container transition-all cursor-pointer  duration-500 hover:rounded-br-[100px]"
           >
-            <div className="w-full h-130 bg-gray-400"></div>
-            <div className=" image-box  w-full  absolute inset-0  h-full -translate-y-full">
+            <div className="w-full z-[99999] h-130 bg-gray-400"></div>
+            <div className=" image-box  w-full   absolute inset-0  h-full -translate-y-full">
               <img
                 src={img.image}
                 alt="image"
