@@ -3,7 +3,7 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <div className='flex gap-x-3 text-2xl mt-5'>
+    <div className='flex gap-x-3 text-2xl fixed top-10'>
       <Link href={'/'}>home</Link> 
          <Link href={'/product'}>product</Link> 
             <Link href={'/about'}>about</Link> 
