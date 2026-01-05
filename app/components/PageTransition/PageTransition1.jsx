@@ -74,7 +74,7 @@ const PageTransition1 = ({ children }) => {
                   src="/image (1).png"
                   alt="image"
                   className="w-full h-full object-cover"
-                />
+                /> 
               </div>
             </div>
           </div>
