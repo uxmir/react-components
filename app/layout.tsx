@@ -28,10 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       <PageTransition1>
-        <Nav/>
         {children}
-       </PageTransition1>
       </body>
     </html>
   );
