@@ -1,17 +1,14 @@
 "use cient";
 import React from "react";
 import Container from "./components/Container/Container";
-import TextReveal from '../app/components/TextSplitReveal/TextSplit'
-import PageTransition2 from "./components/PageTransition/PageTransition2";
+import FlipCard from '../app/components/SkillsFlipCardAnimation/FlipCard'
 const page = () => {
   return (
     <>
     
       <Container>
-
+        <FlipCard/>
         <div>
-          <PageTransition2/>
-          {/* <TextReveal/> */}
         </div>
       </Container>
     </>
