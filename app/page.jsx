@@ -1,13 +1,13 @@
 "use cient";
 import React from "react";
 import Container from "./components/Container/Container";
-import FlipCard from '../app/components/SkillsFlipCardAnimation/FlipCard'
+import Email from '../app/components/Emailform/Email'
 const page = () => {
   return (
     <>
     
       <Container>
-        <FlipCard/>
+       <Email/>
         <div>
         </div>
       </Container>
