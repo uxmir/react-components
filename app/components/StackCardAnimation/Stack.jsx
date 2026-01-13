@@ -21,7 +21,7 @@ const Stack = () => {
           trigger: ".card-container",
           start: "top top",
           end: `+=${cards.length * 100}%`,
-          pin: true,
+          pin: true, 
           scrub: 1,
         },
       });
