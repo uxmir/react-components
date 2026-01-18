@@ -7,7 +7,6 @@ const TextBlurReveal = () => {
   const mainContainer = useRef(null);
   const textContainer = useRef(null);
   const textRef = useRef(null);
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -26,10 +25,8 @@ const TextBlurReveal = () => {
         { filter: "blur(0px)", opacity: 1, duration: 1 }
       );
     });
-
     return () => ctx.revert();
   }, []);
-
   return (
   <>
   <div className="h-[100vh] w-full">

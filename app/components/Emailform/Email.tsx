@@ -1,28 +1,35 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { IconCheck, IconX } from "@tabler/icons-react";
-const Email = () => {
-  const [toastSuccess,setToastSuccess]=useState(false)
-  const [toastError,setToastError]=useState(false)
+interface emailValue{
+  name:string,
+  email:string,
+  message:string
+}
+const Email:React.FC = () => {
+  const [toastSuccess,setToastSuccess]=useState<boolean>(false)
+  const [toastError,setToastError]=useState<boolean>(false)
     // //logic for toast
   useEffect(()=>{
     const timer=setTimeout(()=>{
     if(toastError || toastSuccess){
       setToastSuccess(false)
-      setToastSuccess(false)
+      setToastError(false)
     }
     },2000)
     return ()=>clearTimeout(timer)
   },[toastError,toastSuccess])
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
+    const formDataObj= new FormData(e.currentTarget)
+    const rowData=Object.fromEntries(formDataObj.entries())
+    const formData:emailValue = {
+      name: rowData.name as string,
+      email: rowData.email as string,
+      message:rowData.message as string,
     };
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_EMAIL_API, {
+      const response = await fetch(process.env.NEXT_PUBLIC_EMAIL_API as string, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -92,7 +99,7 @@ const Email = () => {
       </div>
             <div className={`fixed top-4 right-0 w-[300px] transition-all duration-300 flex items-center font-medium gap-x-2 text-red-700  px-4 py-3 bg-red-200 shadow-lg border border-red-200 rounded-lg ${toastError===true?'translate-x-0':'translate-x-full'}`}>
         <IconX className="text-red-600" />
-        <span>Email didn't Sent</span>
+        <span>Email didnt Sent</span>
       </div>
     </>
   );
