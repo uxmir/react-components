@@ -1,13 +1,12 @@
 "use cient";
 import React from "react";
-import TextBlurReveal  from '../app/components/TextBlurReveal/TextBlurReveal'
-import Email from "./components/Emailform/Email";
+import DataTable from "./components/DataTableWithShortingSystem/DataTable";
 const page = () => {
   return (
     <>
 
         <div>
-       <Email/>
+       <DataTable/>
         </div>
     </>
   );
