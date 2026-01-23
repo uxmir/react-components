@@ -1,7 +1,8 @@
 "use cient";
 import React from "react";
 import DataTable from "./components/DataTableWithShortingSystem/DataTable";
-const page = () => {
+import Api from "./components/ApiIntregationWithRedux/Api";
+const page:React.FC = () => {
   return (
     <>
 

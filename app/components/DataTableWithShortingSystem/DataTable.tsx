@@ -111,6 +111,7 @@ interface tableData{
 
 const DataTable:React.FC = () => {
 const [sortData,setSortData]=useState<{key:keyof tableData,direction:'asc'|'desc'}| null>(null)
+const [searchText,setSearchText]=useState<string>("")
 const sortedData=useMemo(()=>{
  const sortItems =[...productData]
  if(!sortData) return sortItems;
@@ -132,9 +133,26 @@ const requestSort=(key:keyof tableData)=>{
     }
     setSortData({key,direction})
 }
+//filter logic
+const filteredData=useMemo(()=>{
+return sortedData.filter((i)=>{
+  return i.product_name.toLowerCase().includes(searchText.toLowerCase())||
+  i.category.toLowerCase().includes(searchText.toLowerCase())||
+  i.company_name.toLowerCase().includes(searchText.toLowerCase())||
+  i.warranty_date.toLowerCase().includes(searchText.toLowerCase())||
+  i.status.toLowerCase().includes(searchText.toLowerCase())
+})
+},[searchText,sortedData])
   return (
     <div>
       <Container>
+        <input 
+        type='text'
+        placeholder='Search by Company Name or Category or status or warranty date....'
+        value={searchText}
+        onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setSearchText(e.target.value)}
+        className='w-[300px] py-2 rounded border-gray-300 border px-5 my-5'
+        />
    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
   <table className="w-full ">
     <thead className="bg-gray-50">
@@ -197,7 +215,7 @@ const requestSort=(key:keyof tableData)=>{
     </thead>
 
     <tbody className="divide-y divide-gray-100">
-      {sortedData.map((data) => (
+      {filteredData.map((data) => (
         <tr
           key={data.id}
           className="hover:bg-gray-50 text-sm"
