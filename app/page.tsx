@@ -1,13 +1,13 @@
 "use cient";
 import React from "react";
-import DataTable from "./components/DataTableWithShortingSystem/DataTable";
-import Api from "./components/ApiIntregationWithRedux/Api";
+import ScrollNav from "./components/RevealNavbarByScrolling/ScrollNav";
+
 const page:React.FC = () => {
   return (
     <>
 
         <div>
-       <DataTable/>
+       <ScrollNav/>
         </div>
     </>
   );
