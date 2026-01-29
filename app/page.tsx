@@ -1,14 +1,12 @@
 "use cient";
 import React from "react";
-import ScrollNav from "./components/RevealNavbarByScrolling/ScrollNav";
-
-const page:React.FC = () => {
+import ScaleImage from "./components/ScaleImageReveal/ScaleImage";
+const page: React.FC = () => {
   return (
     <>
-
-        <div>
-       <ScrollNav/>
-        </div>
+      <div>
+        <ScaleImage />
+      </div>
     </>
   );
 };
