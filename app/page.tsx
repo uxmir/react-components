@@ -1,11 +1,11 @@
 "use cient";
 import React from "react";
-import ScaleImage from "./components/ScaleImageReveal/ScaleImage";
+import ImageOpacity from "./components/ImageOpacity/ImageOpacity";
 const page: React.FC = () => {
   return (
     <>
       <div>
-        <ScaleImage />
+       <ImageOpacity/>
       </div>
     </>
   );
