@@ -1,11 +1,11 @@
 "use cient";
 import React from "react";
-import ImageOpacity from "./components/ImageOpacity/ImageOpacity";
+import PrintingTable from "./components/PrintingTableData/PrintingTable";
 const page: React.FC = () => {
   return (
     <>
       <div>
-       <ImageOpacity/>
+       <PrintingTable/>
       </div>
     </>
   );
