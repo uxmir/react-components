@@ -1,11 +1,11 @@
 "use cient";
 import React from "react";
-import PrintingTable from "./components/PrintingTableData/PrintingTable";
+import TodoApp from "./components/TodoApp/TodoApp";
 const page: React.FC = () => {
   return (
     <>
       <div>
-       <PrintingTable/>
+        <TodoApp/>
       </div>
     </>
   );
